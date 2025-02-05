@@ -5,8 +5,8 @@ services:
     restart: always
     network_mode: host
     environment:
-      - DB_URL=mysql://root:msmiss6833@mysql:3306/meilisync_admin
-      - REDIS_URL=redis://redis:6379/0
+      - DB_URL=mysql://root:msmiss6833@localhost:3306/meilisync_admin
+      - REDIS_URL=redis://localhost:6379/0
       - SECRET_KEY=2VItrow2zJCoWbdQPoMKU+pedKyivMqdWKQ1gIeIRrg=
       - SENTRY_DSN=
   mysql:
