@@ -5,16 +5,18 @@ services:
     restart: always
     network_mode: host
     environment:
-      - DB_URL=mysql://root:msmiss6833@localhost:3306/meilisync_admin
-      - REDIS_URL=redis://localhost:6379/0
+      - DB_URL=mysql://meilisync:msmiss6833@mysql:3306/meilisync_admin
+      - REDIS_URL=redis://redis:6379/0
       - SECRET_KEY=2VItrow2zJCoWbdQPoMKU+pedKyivMqdWKQ1gIeIRrg=
       - SENTRY_DSN=
   mysql:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: msmiss6833
+      MYSQL_ROOT_PASSWORD: rootmsmiss6833
       MYSQL_DATABASE: meilisync_admin
+      MYSQL_USER: meilisync
+      MYSQL_PASSWORD: msmiss6833
   redis:
     image: redis:latest
     restart: always
